@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: simpleblog
+  autoconfigure:
+    imports:
+      - com.simple.bank.config.SimpleBlogWebAutoConfiguration
+  profiles:
+    active: default
+  jackson:
+    default-property-inclusion: non_null  # 序列化时排除值为 null 的字段
+
+server:
+  port: 8887
+
+#debug: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  #        include: configprops  # 暴露配置端点
+  endpoint:
+    configprops:
+      show-values: always  # 显示配置值（默认只显示键）
