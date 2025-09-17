@@ -2,7 +2,6 @@ package com.simple.blog.service;
 
 import com.simple.blog.api.CommentAddRequest;
 import com.simple.blog.dto.CommentDTO;
-import com.simple.blog.mapping.Comment;
 
 import java.util.List;
 

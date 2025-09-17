@@ -6,8 +6,6 @@ import com.simple.blog.dto.Response;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @JsonPropertyOrder({"response", "comments"})
 @Setter
 @Getter

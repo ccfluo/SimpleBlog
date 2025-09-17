@@ -1,11 +1,8 @@
 package com.simple.blog.controller;
 
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.simple.blog.api.*;
 import com.simple.blog.dto.CommentDTO;
 import com.simple.blog.dto.Response;
-import com.simple.blog.mapping.Comment;
 import com.simple.blog.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
