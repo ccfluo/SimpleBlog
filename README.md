@@ -1,5 +1,5 @@
 
-# Simplebank project
+# SimpleBlog project
 
 This is the demo blog backend application, built using Spring Boot. It provides API for managing blog. 
 
