@@ -8,7 +8,6 @@ import com.simple.blog.exception.BusinessException;
 import com.simple.blog.po.Comment;
 import com.simple.blog.respository.CommentRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
