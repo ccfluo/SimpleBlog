@@ -11,4 +11,6 @@ public interface CommentService{
     void deleteCommentById(String id);
     List<CommentDTO> findCommentList();
     CommentDTO findCommentById(String id);
+    void likeComment(String id, String userId);
+    void unLikeComment(String id, String userId);
 }

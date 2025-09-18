@@ -1,4 +1,4 @@
-package com.simple.blog.mapping;
+package com.simple.blog.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 文章评论实体类
@@ -34,8 +36,9 @@ public class Comment implements Serializable {
     @Indexed
     private String userid;//发布人ID
     private String nickname;//昵称
-    private Integer likenum;//点赞数
-    private Integer replynum;//回复数
+    private Integer likecount;//点赞数
+    Set<String> likedUserIds = new HashSet<>();
+    private Integer replycount;//回复数
     private String state;//状态
     private String parentid;//上级ID
     private String articleid;

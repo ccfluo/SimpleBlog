@@ -1,9 +1,9 @@
 spring:
   application:
     name: simpleblog
-  autoconfigure:
-    imports:
-      - com.simple.bank.config.SimpleBlogWebAutoConfiguration
+#  autoconfigure:
+#    imports:
+#      - com.simple.bank.config.
   profiles:
     active: default
   jackson:

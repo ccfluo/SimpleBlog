@@ -31,18 +31,37 @@ public class CommentController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<CommentAddResponse> createCustomer(@RequestBody CommentAddRequest commentAddRequest) {
+    public ResponseEntity<CommentAddResponse> createComment(@RequestBody CommentAddRequest commentAddRequest) {
         CommentDTO savedCommentDTO = service.saveComment(commentAddRequest);
         String message = "New comment saved, id = " + savedCommentDTO.getId();
         return ResponseEntity.ok(new CommentAddResponse(savedCommentDTO, message));
     }
 
     @PostMapping("/{id}/publish")
-    public ResponseEntity<CommentPublishResponse> createCustomer(@PathVariable String id) {
+    public ResponseEntity<CommentPublishResponse> publishComment(@PathVariable String id) {
         CommentDTO publishedComment = service.publishComment(id);
         String message = "New comment published, id = " + publishedComment.getId();
         return ResponseEntity.ok(new CommentPublishResponse(publishedComment, message));
     }
+
+    @PostMapping("/{id}/like")
+    public ResponseEntity<Response> likeComment(
+            @PathVariable String id,
+            @RequestParam String userId) {
+        service.likeComment(id, userId);
+        String message = String.format("%s liked comment id %s" , userId, id);
+        return ResponseEntity.ok(new Response(message));
+    }
+
+    @PostMapping("/{id}/unlike")
+    public ResponseEntity<Response> unLikeComment(
+            @PathVariable String id,
+            @RequestParam String userId) {
+        service.unLikeComment(id, userId);
+        String message = String.format("%s unliked comment id %s" , userId, id);
+        return ResponseEntity.ok(new Response(message));
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Response> deleteById(@PathVariable String id){

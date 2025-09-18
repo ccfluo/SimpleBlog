@@ -1,7 +1,7 @@
 package com.simple.blog.converter;
 
 import com.simple.blog.dto.CommentDTO;
-import com.simple.blog.mapping.Comment;
+import com.simple.blog.po.Comment;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

@@ -38,6 +38,8 @@ The application will start on `http://localhost:8887`.
 - **POST /comments/create**: create and save a new comment.
 - **POST /comments/{id}/publish**: publish a comment.
 - **DELETE /comments/{id}**: Delete a comment.
+- **POST /comments/{id}/like**: like a comment.
+- **POST /comments/{id}/unlike**: unlike a comment.
 
 
 ## Exception Handling
