@@ -41,14 +41,14 @@ public class CommentServiceImpl implements CommentService{
 //设置一些默认初始值。。。
         Comment comment = new Comment();
         comment.setContent(commentAddRequest.getContent());
-        comment.setUserid(commentAddRequest.getUserid());
-        comment.setNickname(commentAddRequest.getNickname());
-        comment.setCreatetime(LocalDateTime.now());
+        comment.setUserId(commentAddRequest.getUserId());
+        comment.setNickName(commentAddRequest.getNickName());
+        comment.setCreateTime(LocalDateTime.now());
         comment.setState("saved");
-        comment.setLikecount(0);
-        comment.setReplycount(0);
-        comment.setParentid(commentAddRequest.getParentid());
-        comment.setArticleid(commentAddRequest.getArticleid());
+        comment.setLikeCount(0);
+        comment.setReplyCount(0);
+        comment.setParentId(commentAddRequest.getParentId());
+        comment.setArticleId(commentAddRequest.getArticleId());
 
         Comment savedComment = commentRepository.save(comment);
         return commentConverter.commentToDto(savedComment);
@@ -62,7 +62,7 @@ public class CommentServiceImpl implements CommentService{
         if (commentDTO.getState().equals("saved")) {
             Comment comment = commentConverter.commentDTOTo(commentDTO);
             comment.setState("published");
-            comment.setPublishtime(LocalDateTime.now());
+            comment.setPublishTime(LocalDateTime.now());
             Comment publishedComment = commentRepository.save(comment);
             return commentConverter.commentToDto(publishedComment);
         } else {
@@ -109,11 +109,11 @@ public class CommentServiceImpl implements CommentService{
 //                addCriteria(Criteria.where("likedUserIds").ne(userId));
         Query query = Query.query(
                 Criteria.where("_id").is(id)
-                        .and("likedUserIds").ne(userId)
+                        .and("liked_user_ids").ne(userId)
         );
         Update update = new Update();
-        update.inc("likecount");
-        update.addToSet("likedUserIds", userId);
+        update.inc("like_count");
+        update.addToSet("liked_user_ids", userId);
 
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, "comment");
         if (updateResult.getModifiedCount() > 0) {
@@ -129,12 +129,12 @@ public class CommentServiceImpl implements CommentService{
     public void unLikeComment(String id, String userId) {
         Query query = Query.query(
                 Criteria.where("_id").is(id)
-                        .and("likedUserIds").is(userId)
+                        .and("liked_user_ids").is(userId)
         );
 
         Update update = new Update();
-        update.inc("likecount", -1);
-        update.pull("likedUserIds", userId);
+        update.inc("like_count", -1);
+        update.pull("liked_user_ids", userId);
 
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, "comment");
         if (updateResult.getModifiedCount() > 0) {

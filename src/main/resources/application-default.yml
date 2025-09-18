@@ -9,6 +9,7 @@ spring:
       port: 27017
       #也可以使用uri连接
       #uri: mongodb://127.0.0.1:27017/comment
+      field-naming-strategy : org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
 
 logging:
   path: ./log

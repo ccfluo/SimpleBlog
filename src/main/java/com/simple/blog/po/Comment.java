@@ -34,14 +34,14 @@ public class Comment implements Serializable {
     private String content;//吐槽内容
     //添加了一个单字段的索引
     @Indexed
-    private String userid;//发布人ID
-    private String nickname;//昵称
-    private Integer likecount;//点赞数
+    private String userId;//发布人ID
+    private String nickName;//昵称
+    private Integer likeCount;//点赞数
     Set<String> likedUserIds = new HashSet<>();
-    private Integer replycount;//回复数
+    private Integer replyCount;//回复数
     private String state;//状态
-    private String parentid;//上级ID
-    private String articleid;
-    private LocalDateTime createtime;//评论的日期时间
-    private LocalDateTime publishtime;//发布日期
+    private String parentId;//上级ID
+    private String articleId;
+    private LocalDateTime createTime;//评论的日期时间
+    private LocalDateTime publishTime;//发布日期
 }

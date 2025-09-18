@@ -9,9 +9,9 @@ import lombok.Setter;
 @Getter
 public class CommentAddRequest {
     private String content;//吐槽内容
-    private String userid;//发布人ID
-    private String nickname;//昵称
+    private String userId;//发布人ID
+    private String nickName;//昵称
     private String state;//状态
-    private String parentid;//上级ID
-    private String articleid;
+    private String parentId;//上级ID
+    private String articleId;
 }
