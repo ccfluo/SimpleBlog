@@ -4,10 +4,10 @@
 This is the demo blog backend application, built using Spring Boot. It provides API for managing blog. 
 
 ## Version
-| Version | Date       |                                          |                                                                        
-|---------|------------|------------------------------------------|
-| 0.1     | 2025/09/17 | Demo version to test different framework |   
-| 0.2     | 2025/09/19 | support mongodb replica sets             |  
+| Version | Date       |                                              |                                                                        
+|---------|------------|----------------------------------------------|
+| 0.1     | 2025/09/17 | Demo version to test different framework     |   
+| 0.2     | 2025/09/19 | support mongodb replica sets/Sharded Cluster |  
 
 
 ## Features
