@@ -10,7 +10,7 @@ spring:
       #uri连接 replica set
 #      uri : mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:27019/blogdb?connect=replicaSet&slaveOk=true&replicaSet=myrs
       #uri连接 sharded cluster
-      uri: mongodb://127.0.0.1::27017,1127.0.0.1::27117/blogdb
+      uri: mongodb://127.0.0.1:27017,127.0.0.1:27117/blogdb
       field-naming-strategy : org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
 
 logging:
